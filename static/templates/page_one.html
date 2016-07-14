@@ -1,0 +1,133 @@
+<div class="page-1 spacer">
+    <div class="modal fade" id="strategy-modal" tabindex="-1" role="dialog" aria-labelledby="Strategy">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Dental Career Planning</h4>
+         </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h4>1. Location Considerations</h4>
+        </div>
+    </div>
+
+    <div class="row spacer">
+        <div class="col-md-6">
+            <% if (complete) { %>
+                <div class="alert alert-success">
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                    <b>Great work!</b> Click Step 2 to continue.
+                </div>
+            <% } else { %>
+                <div class="alert alert-info">
+                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                    Identify the primary factors to consider when selecting a dental location.
+                </div>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="actor-introduction">
+                <h4><%= actor.intro_title %></h4>
+                <p><%= actor.intro_text %></p>
+                <h4>Factors to consider</h4>
+                <p>Before looking at the map, think about some of the factors that might play a significant role in this decision.</p>
+                <p>Identify the top 3 factors from the lists below</p>
+                <form>
+                <div class="cases">
+                    <div class="casetitle">Question 1</div>
+                    <div class="casecontent">
+                        <div class="casequestion">
+                            <div class="casequestion-text clearfix">
+                                <div class="question-text">
+                                    <div class='question-sub'><p>Most important factor</p></div>
+                                </div>
+                            </div>
+                            <select name="factor1" <% if (complete) { %>disabled="disabled" <% } %>>
+                                <option value="-----">-----</option>
+                                <option value="Work area (urban, suburban, or rural)">Work area (urban, suburban, or rural)</option>
+                                <option value="Patient population’s socioeconomic status">Patient population’s socioeconomic status</option>
+                                <option value="Personal debt to repay">Personal debt to repay</option>
+                                <option value="A need for dentists based on population size or level of disease">A need for dentists based on population size or level of disease</option>
+                                <option value="Ability to identify with the patient population socially">Ability to identify with the patient population socially</option>
+                                <option value="Ample opportunities to make a good living">Ample opportunities to make a good living</option>
+                                <option value="School system or other family related obligations">School system or other family related obligations</option>
+                                <option value="Available leisure and cultural activities">Available leisure and cultural activities</option>
+                                <option value="Length of commute or availability of reliable transportation">Length of commute or availability of reliable transportation</option>
+                                <option value="Patient population is diverse">Patient population is diverse</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cases">
+                    <div class="casetitle">Question 2</div>
+                    <div class="casecontent">
+                        <div class="casequestion">
+                            <div class="casequestion-text clearfix">
+                                <div class="question-text">
+                                    <div class='question-sub'><p>Next important factor:</p></div>
+                                </div>
+                            </div>
+                            <select name="factor2" <% if (complete) { %>disabled="disabled" <% } %>>
+                                 <option value="-----">-----</option>
+                                <option value="Work area (urban, suburban, or rural)">Work area (urban, suburban, or rural)</option>
+                                <option value="Personal debt to repay">Personal debt to repay</option>
+                                <option value="A need for dentists based on population size or level of disease">A need for dentists based on population size or level of disease</option>
+                                <option value="Ability to identify with the patient population socially">Ability to identify with the patient population socially</option>
+                                <option value="Ample opportunities to make a good living">Ample opportunities to make a good living</option>
+                                <option value="School system or other family related obligations">School system or other family related obligations</option>
+                                <option value="Available leisure and cultural activities">Available leisure and cultural activities</option>
+                                <option value="Length of commute or availability of reliable transportation">Length of commute or availability of reliable transportation</option>
+                                <option value="Patient population is diverse">Patient population is diverse</option>
+                                <option value="Patient population’s socioeconomic status">Patient population’s socioeconomic status</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cases">
+                    <div class="casetitle">Question 3</div>
+                    <div class="casecontent">
+                        <div class="casequestion">
+                            <div class="casequestion-text clearfix">
+                                <div class="question-text"><div class='question-sub'><p>Third important factor:</p></div></div>
+                            </div>
+                            <select name="factor3" <% if (complete) { %>disabled="disabled" <% } %>>
+                                <option value="-----">-----</option>
+                                <option value="Work area (urban, suburban, or rural)">Work area (urban, suburban, or rural)</option>
+                                <option value="Personal debt to repay">Personal debt to repay</option>
+                                <option value="A need for dentists based on population size or level of disease">A need for dentists based on population size or level of disease</option>
+                                <option value="Ability to identify with the patient population socially">Ability to identify with the patient population socially</option>
+                                <option value="Ample opportunities to make a good living">Ample opportunities to make a good living</option>
+                                <option value="School system or other family related obligations">School system or other family related obligations</option>
+                                <option value="Available leisure and cultural activities">Available leisure and cultural activities</option>
+                                <option value="Length of commute or availability of reliable transportation">Length of commute or availability of reliable transportation</option>
+                                <option value="Patient population is diverse">Patient population is diverse</option>
+                                <option value="Patient population’s socioeconomic status">Patient population’s socioeconomic status</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row spacer">
+        <div class="col-md-12 text-center">
+            <% if (!complete) { %>
+                <button id="identify-factors" class="btn btn-primary">Submit</button>
+            <% } %>
+        </div>
+    </div>
+</div>
