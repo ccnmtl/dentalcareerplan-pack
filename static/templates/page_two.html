@@ -1,0 +1,184 @@
+<div class="page-1 spacer">
+    <div class="modal fade" id="strategy-modal" tabindex="-1" role="dialog" aria-labelledby="Strategy">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Dental Career Planning</h4>
+         </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h4>2. Offer Advice</h4>
+        </div>
+        <div class="col-md-offset-3 col-md-3">
+            <a href="#" class="btn btn-default pull-right" data-toggle="modal" data-target="#map-layers-modal">
+                <span class="glyphicon glyphicon-picture"></span> Map View
+            </a>
+
+            <div class="modal fade" id="map-layers-modal" tabindex="-1" role="dialog" aria-labelledby="Help">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title"></h4>
+                  </div>
+                  <div class="modal-body">
+                      MAP
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div> 
+        </div>
+    </div>
+
+    <div class="row spacer">
+        <div class="col-md-6">
+            <% if (complete) { %>
+                <div class="alert alert-success">
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                    <b>Great work!</b> Click Step 3 to continue.
+                </div>
+            <% } else { %>
+                <div class="alert alert-info">
+                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                    Review the map and offer advice on a dental office location.
+                </div>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="row spacer">
+        <div class="col-md-12">
+            <div class="actor-advice">
+                <form>
+                <!--  actor's 1st 3 questions -->
+                <% for (var i = 0; i < actor.questions.length; i++) { %>
+                    <% var question = actor.questions[i]; %>
+
+                    <div class="cases">
+                        <div class="casetitle">Question <%= i + 1 %></div>
+                        <div class="casecontent">
+                            <div class="casequestion">
+                                <div class="casequestion-text clearfix">
+                                    <div class="question-text">
+                                        <p><%= question.text %></p>
+                                    </div>
+                                </div>
+                                <ul class="caseanswercontainer">
+                                    <% for (var j = 0; j < question.answers.length; j++) { %>
+                                        <% var answer = question.answers[j]; %>
+                                        <% var name = "advice" + i; %>
+                                        <li>
+                                        <label>
+                                        <input type="radio" name="<%=name%>" value="<%= answer %>"
+                                            <% if (complete) { %>disabled="disabled"<% } %>
+                                            <% if (responses[name] === answer) { %> checked="checked" <% } %> />
+                                        <span class="caseanswerlabel"><%= answer %></span>
+                                        </label>
+                                        </li>
+                                    <% } %>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+
+                <div class="cases">
+                    <div class="casetitle">Question 4:</div>
+                    <div class="casecontent">
+                        <div class="casequestion">
+                            <div class="casequestion-text clearfix">
+                                <div class="question-text">
+                                    <p>Now spend some time to further explore North Oralington using the interactive map. Based on the summary and your investigation, where would you recommend Sally to set up or join a practice? Please use the map to select a zip code.</p>
+                                </div>
+                            </div>
+                            <select name="officezip" <% if (complete) { %>disabled="disabled" <% } %>>
+                                <option value="-----">-----</option>
+                                <option value="10001">10001</option>
+                                <option value="10002">10002</option>
+                                <option value="10003">10003</option>
+                                <option value="10004">10004</option>
+                                <option value="10005">10005</option>
+                                <option value="10006">10006</option>
+                                <option value="10007">10007</option>
+                                <option value="10008">10008</option>
+                                <option value="10009">10009</option>
+                                <option value="10010">10010</option>
+                                <option value="10011">10011</option>
+                                <option value="10012">10012</option>
+                                <option value="10013">10013</option>
+                                <option value="10014">10014</option>
+                                <option value="10015">10015</option>
+                                <option value="10016">10016</option>
+                                <option value="10017">10017</option>
+                                <option value="10018">10018</option>
+                                <option value="10019">10019</option>
+                                <option value="10020">10020</option>
+                                <option value="10021">10021</option>
+                                <option value="10022">10022</option>
+                                <option value="10023">10023</option>
+                                <option value="10024">10024</option>
+                                <option value="10025">10025</option>
+                                <option value="10026">10026</option>
+                                <option value="10027">10027</option>
+                                <option value="10028">10028</option>
+                                <option value="10029">10029</option>
+                                <option value="10030">10030</option>
+                                <option value="10031">10031</option>
+                                <option value="10032">10032</option>
+                                <option value="10033">10033</option>
+                                <option value="10034">10034</option>
+                                <option value="10035">10035</option>
+                                <option value="10036">10036</option>
+                                <option value="10037">10037</option>
+                                <option value="10038">10038</option>
+                                <option value="10039">10039</option>
+                                <option value="10040">10040</option>
+                                <option value="10041">10041</option>
+                                <option value="10042">10042</option>
+                                <option value="10043">10043</option>
+                                <option value="10044">10044</option>
+                                <option value="10045">10045</option>
+                                <option value="10046">10046</option>
+                                <option value="10047">10047</option>
+                                <option value="10048">10048</option>
+                                <option value="10049">10049</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="cases">
+                    <div class="casetitle">Question 5:</div>
+                    <div class="casecontent">
+                        <div class="casequestion">
+                            <div class="casequestion-text clearfix">
+                                <div class="question-text">
+                                    <p>Please explain the reasoning for your choice.</p>
+                                </div>
+                            </div>
+                            <textarea rows="10" name="reasoning" class="form-control" <% if (complete) { %>disabled="disabled" <% } %>><%= responses.reasoning %></textarea>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row spacer">
+        <div class="col-md-12 text-center">
+            <% if (!complete) { %>
+                <button id="offer-advice" class="btn btn-primary">Submit</button>
+            <% } %>
+        </div>
+    </div>
+</div>

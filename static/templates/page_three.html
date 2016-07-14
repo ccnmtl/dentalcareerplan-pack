@@ -1,0 +1,109 @@
+<div class="page-1 spacer">
+    <div class="modal fade" id="strategy-modal" tabindex="-1" role="dialog" aria-labelledby="Strategy">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Dental Career Planning</h4>
+         </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h4>3. Summary & Reflection</h4>
+        </div>
+    </div>
+
+    <div class="row spacer">
+        <div class="col-md-6">
+            <% if (complete) { %>
+                <div class="alert alert-success">
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                    <b>Great work!</b> Click the printer icon to print or save your work.
+                </div>
+            <% } else { %>
+                <div class="alert alert-info">
+                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                    Review your answers, then take a moment to reflect on your selections.
+                </div>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="row spacer">
+        <div class="col-md-4">
+            <h4>Factors to consider</h4><br />
+            <dl>
+              <dt>Most important factor</dt>
+              <dd><%=responses.factor1%></dd>
+            </dl>
+            <dl>
+              <dt>Next important factor</dt>
+              <dd><%=responses.factor2%></dd>
+            </dl>
+            <dl>
+              <dt>Third important factor</dt>
+              <dd><%=responses.factor3%></dd>
+            </dl>
+        </div>
+        <div class="col-md-4">
+            <h4>Advice</h4><br />
+            <% for (var i = 0; i < actor.questions.length; i++) { %>
+                <% var name = "advice" + i; %>
+                <dl>
+                    <dt><%= actor.questions[i].summary%></dt>
+                    <dd><%= responses[name] %></dd>
+                </dl>
+            <% } %>
+            <dl>
+                <dt>The zip code you suggested for a practice location</dt>
+                <dd><%= responses.officezip %></dd>
+            </dl>
+        </div>
+        <div class="col-md-4">
+            <h4>Your Reasoning</h4><br />
+            <dl>
+                <dt>The reasoning for your choices</dt>
+                <dd><%= responses.reasoning %></dd>
+            </dl>
+        </div>
+    </div>
+
+    <% if (actor.reflect) { %>
+        <div class="row spacer">
+            <div class="col-md-12">
+                <dl>
+                    <form>
+                    <div class="cases">
+                         <div class="casetitle">Reflection Question</div>
+                        <div class="casecontent">
+                            <div class="casequestion">
+                                <div class="casequestion-text clearfix">
+                                    <div class="question-text">
+                                        <p>How well did your career selection reflect the factors most important in your decision-making?</p>
+                                    </div>
+                                </div>
+                                <textarea rows="10" name="reflection" class="form-control" <% if (complete) { %>disabled="disabled" <% } %>><%= responses.reflection %></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                </dl>
+            </div>
+        </div>
+        <% if (!complete) { %>
+            <div class="row spacer">
+                <div class="col-md-12 text-center">
+                    <% if (!complete) { %>
+                        <button id="self-reflection" class="btn btn-primary">Submit</button>
+                    <% } %>
+                </div>
+            </div>
+        <% } %>
+    <% } %>
+</div>

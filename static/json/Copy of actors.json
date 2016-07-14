@@ -1,0 +1,61 @@
+[
+{
+    "display_name": "Sam",
+    "intro_title": "Your Friend Sam",
+    "intro_text": "<p>Your friend Sam just finished dental school and plans to move to North Oralington to be closer to his family. He is in his late twenties and is married with a 2 year old girl. His wife is currently not employed.</p><p>He is a general dentist with a strong interest in working with young children. When he gets to North Oralington, he would like to open or join a family-oriented private practice.</p><p>Sam has about 180K remaining in debt from dental school. His family is open to living anywhere in the state. He comes to you for your recommendation on where he should set up or join a practice.</p>",
+    "advise_title": "Advise Sam",
+    "advise_text": "You just got access to a map of North Oralington. Review the map by clicking the orange button to the right, \"Show Map.\"",
+    "questions": [
+        {
+            "question": "Sam would like to work with young children. Which zip code should he consider?"
+        }, {
+            "question": "Sam and his wife have one car. They would like to have access to public transportation. What county should he consider?"
+        }, {
+            "question": "Sam is fluent in Spanish. Based on this fact alone, which county should he consider?"
+        }
+    ],
+    "image": "./sam.png",
+    "id": 1
+},
+{
+    "display_name": "Sally",
+    "intro_title": "Your Friend Sally",
+    "intro": "<p>Your friend Sally graduated from dental school a couple of years earlier than you and just completed her pediatric dental residency. She is also planning to move to North Oralington.</p><p>Sally's main goal is to provide care to under-served young children and has considered working at a community health clinic. She is in her late twenties, is single, and has about 70K of remaining loans. She comes to you for advice on the best location for her to set up or join a practice.</p>",
+    "advise_title": "Advise Sally",
+    "advise_text": "You just got access to a map of North Oralington. Review the map by clicking the orange button to the right, \"Show Map.\"",
+    "questions": [
+        {
+            "text": "Sally has heard of a loan replacement program available if she works at a dental safety net site. What zip code should she consider?",
+            "answers": ['10040', '10001', '10021', '10037']
+        }, {
+            "text": "In dental school Sally completed a rotation focused on immigrant health. In which county could she utilize this experience?",
+            "answers": ['Springdale County', 'Duane County', 'Beacon County', 'Annenburg County']
+        }, {
+            "text": "Sally is thinking about working as a part-time associate at a practice that serves Medicaid populations. Which county would you recommend she consider?",
+            "answers": ['Springdale County', 'Duane County', 'Beacon County', 'Annenburg County']
+        }
+    ],
+    "image": "./sally.png",
+    "id": 2
+},
+{
+    "display_name": "You",
+    "intro_title": "Your Career",
+    "intro": "<p>Imagine now that <b>you</b> are a newly minted dentist with a strong interest in providing dental care to young children. You also decide to move to North Oralington and you begin planning your dental career.</p>",
+    "advise_title": "Your Career Choice",
+    "advise_text": "After considering the available information on North Oralington, what type of dental career would you select for yourself?",
+    "questions": [
+        {
+            "id": 1,
+            "answers": ['Solo private practice', 'Group private practice', 'Solo private practice accepting Medicaid',  'Group practice accepting Medicaid', 'Community health center', 'Dental school', 'Hospital'],
+            "question": "Your primary choice is how you intend to spend the majority of your working hours."
+        }, {
+            "id": 2,
+            "answers": ['Solo private practice', 'Group private practice', 'Solo private practice accepting Medicaid',  'Group practice accepting Medicaid', 'Community health center', 'Dental school', 'Hospital'],
+            "question": "Your secondary choice is the next in line in terms of proportion of work hours."
+        }
+    ],
+    "image": "./you.png",
+    "id": 3
+}
+]
