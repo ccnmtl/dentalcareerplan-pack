@@ -19,7 +19,7 @@
         </div>
     </div>
 
-    <div class="row spacer">
+    <div class="row spacer viewonly">
         <div class="col-md-6">
             <% if (complete) { %>
                 <div class="alert alert-success">
@@ -36,91 +36,97 @@
     </div>
 
     <div class="row">
+        <div class="col-md-7">
+            <h4><%= actor.intro_title %></h4>
+            <p><%= actor.intro_text %></p>
+            <h4>Factors to consider</h4>
+            <p>Before looking at the map, think about some of the factors that might play a significant role in this decision.</p>
+            <p>Identify the top 3 factors from the lists below</p>
+        </div>
+        <div class="col-md-5">
+            <div class="actor-image actor-image-<%=actor.id%>"></div>
+        </div>
+    </div>
+
+    <div class="row spacer">
         <div class="col-md-12">
-            <div class="actor-introduction">
-                <h4><%= actor.intro_title %></h4>
-                <p><%= actor.intro_text %></p>
-                <h4>Factors to consider</h4>
-                <p>Before looking at the map, think about some of the factors that might play a significant role in this decision.</p>
-                <p>Identify the top 3 factors from the lists below</p>
-                <form>
-                <div class="cases">
-                    <div class="casetitle">Question 1</div>
-                    <div class="casecontent">
-                        <div class="casequestion">
-                            <div class="casequestion-text clearfix">
-                                <div class="question-text">
-                                    <div class='question-sub'><p>Most important factor</p></div>
-                                </div>
+            <form>
+            <div class="cases">
+                <div class="casetitle">Question 1</div>
+                <div class="casecontent">
+                    <div class="casequestion">
+                        <div class="casequestion-text clearfix">
+                            <div class="question-text">
+                                <div class='question-sub'><p>Most important factor</p></div>
                             </div>
-                            <select name="factor1" <% if (complete) { %>disabled="disabled" <% } %>>
-                                <option value="-----">-----</option>
-                                <option value="Work area (urban, suburban, or rural)">Work area (urban, suburban, or rural)</option>
-                                <option value="Patient population’s socioeconomic status">Patient population’s socioeconomic status</option>
-                                <option value="Personal debt to repay">Personal debt to repay</option>
-                                <option value="A need for dentists based on population size or level of disease">A need for dentists based on population size or level of disease</option>
-                                <option value="Ability to identify with the patient population socially">Ability to identify with the patient population socially</option>
-                                <option value="Ample opportunities to make a good living">Ample opportunities to make a good living</option>
-                                <option value="School system or other family related obligations">School system or other family related obligations</option>
-                                <option value="Available leisure and cultural activities">Available leisure and cultural activities</option>
-                                <option value="Length of commute or availability of reliable transportation">Length of commute or availability of reliable transportation</option>
-                                <option value="Patient population is diverse">Patient population is diverse</option>
-                            </select>
                         </div>
+                        <select name="factor1" <% if (complete) { %>disabled="disabled" <% } %>>
+                            <option value="-----">-----</option>
+                            <option value="Work area (urban, suburban, or rural)">Work area (urban, suburban, or rural)</option>
+                            <option value="Patient population’s socioeconomic status">Patient population’s socioeconomic status</option>
+                            <option value="Personal debt to repay">Personal debt to repay</option>
+                            <option value="A need for dentists based on population size or level of disease">A need for dentists based on population size or level of disease</option>
+                            <option value="Ability to identify with the patient population socially">Ability to identify with the patient population socially</option>
+                            <option value="Ample opportunities to make a good living">Ample opportunities to make a good living</option>
+                            <option value="School system or other family related obligations">School system or other family related obligations</option>
+                            <option value="Available leisure and cultural activities">Available leisure and cultural activities</option>
+                            <option value="Length of commute or availability of reliable transportation">Length of commute or availability of reliable transportation</option>
+                            <option value="Patient population is diverse">Patient population is diverse</option>
+                        </select>
                     </div>
                 </div>
-
-                <div class="cases">
-                    <div class="casetitle">Question 2</div>
-                    <div class="casecontent">
-                        <div class="casequestion">
-                            <div class="casequestion-text clearfix">
-                                <div class="question-text">
-                                    <div class='question-sub'><p>Next important factor:</p></div>
-                                </div>
-                            </div>
-                            <select name="factor2" <% if (complete) { %>disabled="disabled" <% } %>>
-                                 <option value="-----">-----</option>
-                                <option value="Work area (urban, suburban, or rural)">Work area (urban, suburban, or rural)</option>
-                                <option value="Personal debt to repay">Personal debt to repay</option>
-                                <option value="A need for dentists based on population size or level of disease">A need for dentists based on population size or level of disease</option>
-                                <option value="Ability to identify with the patient population socially">Ability to identify with the patient population socially</option>
-                                <option value="Ample opportunities to make a good living">Ample opportunities to make a good living</option>
-                                <option value="School system or other family related obligations">School system or other family related obligations</option>
-                                <option value="Available leisure and cultural activities">Available leisure and cultural activities</option>
-                                <option value="Length of commute or availability of reliable transportation">Length of commute or availability of reliable transportation</option>
-                                <option value="Patient population is diverse">Patient population is diverse</option>
-                                <option value="Patient population’s socioeconomic status">Patient population’s socioeconomic status</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="cases">
-                    <div class="casetitle">Question 3</div>
-                    <div class="casecontent">
-                        <div class="casequestion">
-                            <div class="casequestion-text clearfix">
-                                <div class="question-text"><div class='question-sub'><p>Third important factor:</p></div></div>
-                            </div>
-                            <select name="factor3" <% if (complete) { %>disabled="disabled" <% } %>>
-                                <option value="-----">-----</option>
-                                <option value="Work area (urban, suburban, or rural)">Work area (urban, suburban, or rural)</option>
-                                <option value="Personal debt to repay">Personal debt to repay</option>
-                                <option value="A need for dentists based on population size or level of disease">A need for dentists based on population size or level of disease</option>
-                                <option value="Ability to identify with the patient population socially">Ability to identify with the patient population socially</option>
-                                <option value="Ample opportunities to make a good living">Ample opportunities to make a good living</option>
-                                <option value="School system or other family related obligations">School system or other family related obligations</option>
-                                <option value="Available leisure and cultural activities">Available leisure and cultural activities</option>
-                                <option value="Length of commute or availability of reliable transportation">Length of commute or availability of reliable transportation</option>
-                                <option value="Patient population is diverse">Patient population is diverse</option>
-                                <option value="Patient population’s socioeconomic status">Patient population’s socioeconomic status</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                </form>
             </div>
+
+            <div class="cases">
+                <div class="casetitle">Question 2</div>
+                <div class="casecontent">
+                    <div class="casequestion">
+                        <div class="casequestion-text clearfix">
+                            <div class="question-text">
+                                <div class='question-sub'><p>Next important factor:</p></div>
+                            </div>
+                        </div>
+                        <select name="factor2" <% if (complete) { %>disabled="disabled" <% } %>>
+                             <option value="-----">-----</option>
+                            <option value="Work area (urban, suburban, or rural)">Work area (urban, suburban, or rural)</option>
+                            <option value="Personal debt to repay">Personal debt to repay</option>
+                            <option value="A need for dentists based on population size or level of disease">A need for dentists based on population size or level of disease</option>
+                            <option value="Ability to identify with the patient population socially">Ability to identify with the patient population socially</option>
+                            <option value="Ample opportunities to make a good living">Ample opportunities to make a good living</option>
+                            <option value="School system or other family related obligations">School system or other family related obligations</option>
+                            <option value="Available leisure and cultural activities">Available leisure and cultural activities</option>
+                            <option value="Length of commute or availability of reliable transportation">Length of commute or availability of reliable transportation</option>
+                            <option value="Patient population is diverse">Patient population is diverse</option>
+                            <option value="Patient population’s socioeconomic status">Patient population’s socioeconomic status</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cases">
+                <div class="casetitle">Question 3</div>
+                <div class="casecontent">
+                    <div class="casequestion">
+                        <div class="casequestion-text clearfix">
+                            <div class="question-text"><div class='question-sub'><p>Third important factor:</p></div></div>
+                        </div>
+                        <select name="factor3" <% if (complete) { %>disabled="disabled" <% } %>>
+                            <option value="-----">-----</option>
+                            <option value="Work area (urban, suburban, or rural)">Work area (urban, suburban, or rural)</option>
+                            <option value="Personal debt to repay">Personal debt to repay</option>
+                            <option value="A need for dentists based on population size or level of disease">A need for dentists based on population size or level of disease</option>
+                            <option value="Ability to identify with the patient population socially">Ability to identify with the patient population socially</option>
+                            <option value="Ample opportunities to make a good living">Ample opportunities to make a good living</option>
+                            <option value="School system or other family related obligations">School system or other family related obligations</option>
+                            <option value="Available leisure and cultural activities">Available leisure and cultural activities</option>
+                            <option value="Length of commute or availability of reliable transportation">Length of commute or availability of reliable transportation</option>
+                            <option value="Patient population is diverse">Patient population is diverse</option>
+                            <option value="Patient population’s socioeconomic status">Patient population’s socioeconomic status</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            </form>
         </div>
     </div>
     <div class="row spacer">
