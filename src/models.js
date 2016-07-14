@@ -32,5 +32,4 @@ var MapLayerList = Backbone.Collection.extend({
     }
 });
 
-
 module.exports.MapLayerList = MapLayerList;

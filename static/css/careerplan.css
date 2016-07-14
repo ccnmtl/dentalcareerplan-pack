@@ -75,3 +75,31 @@ a.btn.btn-default {
     border: 1px solid #999;
     line-height: 18px;
 }
+
+.page-1 .actor-image {
+    margin: 0 auto; 
+}
+
+.actor-image-1 {
+    width: 350px;
+    height: 272px;
+    background-image: url('../img/sam.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.actor-image-2 {
+    width: 350px;
+    height: 272px;
+    background-image: url('../img/sally.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.actor-image-3 {
+    width: 300px;
+    height: 303px;
+    background-image: url('../img/you.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+}

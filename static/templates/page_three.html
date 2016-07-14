@@ -13,13 +13,13 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row viewonly">
         <div class="col-md-6">
             <h4>3. Summary & Reflection</h4>
         </div>
     </div>
 
-    <div class="row spacer">
+    <div class="row spacer viewonly">
         <div class="col-md-6">
             <% if (complete) { %>
                 <div class="alert alert-success">
@@ -35,6 +35,21 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-md-7">
+            <h4><%= actor.intro_title %></h4>
+            <p><%= actor.intro_text %></p>
+            <h4>Summary</h4>
+            <p>
+                Your location consideration factors, advice and reasoning are summarized below for review.
+                Click the print icon to print or save your work.
+            </p>
+        </div>
+        <div class="col-md-5">
+            <div class="actor-image actor-image-<%=actor.id%> viewonly"></div>
+        </div>
+    </div>
+    <hr />
     <div class="row spacer">
         <div class="col-md-4">
             <h4>Factors to consider</h4><br />
@@ -97,7 +112,7 @@
             </div>
         </div>
         <% if (!complete) { %>
-            <div class="row spacer">
+            <div class="row spacer viewonly">
                 <div class="col-md-12 text-center">
                     <% if (!complete) { %>
                         <button id="self-reflection" class="btn btn-primary">Submit</button>
