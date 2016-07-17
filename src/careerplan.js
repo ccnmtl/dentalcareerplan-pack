@@ -152,9 +152,29 @@ var SummaryView = BaseView.extend({
     }
 });
 
+var MapView = BaseView.extend({
+    events: {
+        'change .select-base-map': 'onChangeBaseMap',
+    },
+    initialize: function(options) {
+        _.bindAll(this, 'render', 'onChangeBaseMap');
+    },
+    onChangeBaseMap: function(evt) {
+        jQuery('.base-layer').hide();
+        var value = jQuery(evt.target).val();
+        if (value.length > 0) {
+            jQuery('.base-layer').attr('src', value).show();
+        }
+    }
+});
+
 var CareerPlanApp = {
     initialize: function(options) {
         var $parent = jQuery('.career-planning');
+
+        var mapView = new MapView({
+            el: jQuery('#map-layers-modal')
+        });
 
         var actors = require('../static/json/actors.json');
         var responses = {};
