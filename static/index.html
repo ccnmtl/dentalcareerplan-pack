@@ -32,6 +32,184 @@
                 </ul>
             </div>
         </div>
+
+        <div class="modal fade" id="map-layers-modal" tabindex="-1" role="dialog" aria-labelledby="Help">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">North Oralington Map</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h5>Choose base layer</h5>
+                                <select class="select-base-map">
+                                    <option value="">Geography</option>
+                                    <option value="./population.png">Population</option>
+                                    <option value="./under_5.png">Population under 5</option>
+                                    <option value="./poverty.png">% Population Below Poverty Level</option>
+                                    <option value="./childhood_caries.png">% Children with Caries Experience</option>
+                                </select>
+                                <br><br>
+                                <h5>Show layers</h5>
+                                <div class="checkbox">
+                                    <label data-toggle="collapse" data-target="#layer-zipcode">
+                                        <input type="checkbox"/> Zip codes
+                                    </label>
+                                    <!--  <div id="layer-zipcode" class="collapse">This div (Foo) is hidden by default</div> -->
+                                </div>
+                                <div class="checkbox">
+                                    <label data-toggle="collapse" data-target="#layer-transport">
+                                        <input type="checkbox"/> Major roads and public transportation lines
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label data-toggle="collapse" data-target="#layer-gp-medicaid">
+                                        <input type="checkbox"/> GP (accepting Medicaid)
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label data-toggle="collapse" data-target="#layer-gp-no-medicaid">
+                                        <input type="checkbox"/> GP (not accepting Medicaid)
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label data-toggle="collapse" data-target="#layer-pd-medicaid">
+                                        <input type="checkbox"/> PD (accepting Medicaid)
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label data-toggle="collapse" data-target="#layer-pd-no-medicaid">
+                                        <input type="checkbox"/> PD (not accepting Medicaid)
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label data-toggle="collapse" data-target="#layer-safety-net">
+                                        <input type="checkbox"/> Dental safety net
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-9  text-center">
+                                <div class="map-layers">
+                                    <!-- These are the layers that never get hidden: geography, the borders of the counties and the general labels. -->
+                                    <img class="map-layer" alt="career map" src="./geography.jpg" />
+
+                                    <!-- These are additional base layers -->
+                                    <img class="map-layer base-layer" src="" style="display: none" />
+
+                                    <!-- These are the layers that you can show and hide and show up on the list of layers. -->
+                                    <img id="layer-zipcode" src="./zipcode.png" class="map-layer collapse"/>
+                                    <img id="layer-transport" src="./transport.png" class="map-layer collapse" />
+                                    <img id="layer-gp-medicaid" src="./num_gp_medicaid.png" class="map-layer collapse" />
+                                    <img id="layer-gp-no-medicaid" src="./num_gp_no_medicaid.png" class="map-layer collapse" />
+                                    <img id="layer-pd-medicaid" src="./num_pd_medicaid.png" class="map-layer collapse" />
+                                    <img id="layer-pd-no-medicaid" src="./num_pd_no_medicaid.png" class="map-layer collapse" />
+                                    <img id="layer-safety-net" src="./safetynet.png" class="map-layer collapse" />
+
+                                    <img class="map-layer" src="./county_borders.png" class="map-layer" />
+                                    <img class="map-layer" src="./general_labels.png" class="map-layer" />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button class="btn btn-sm btn-default pull-right" type="button" data-toggle="collapse" data-target="#legend" aria-expanded="false" aria-controls="legend">
+                                    <span class="glyphicon glyphicon-resize-vertical" aria-hidden="true"></span> Show/Hide Legend
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <div class="collapse in" id="legend">
+                                    <h5>Map Legend</h5>
+                                    <img src="./legend.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row spacer">
+                            <div class="col-md-12 text-center">
+                                <h5>Demographics</h5>
+                                <table class="table table-bordered">
+                                    <tbody>
+                                    <tr>
+                                        <th />
+                                        <th>Population</th>
+                                        <th>Population under 5</th>
+                                        <th>Below poverty level</th>
+                                        <th>Median household income in dollars</th>
+                                        <th>High school graduates</th>
+                                        <th>Foreign born</th>
+                                        <th>Language other than English</th>
+                                        <th>White</th>
+                                        <th>Black</th>
+                                        <th>Hispanic or Latino</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Beacon</th>
+                                        <td>971,777</td>
+                                        <td>7.2%</td>
+                                        <td>6.7%</td>
+                                        <td>93,774</td>
+                                        <td>91.1%</td>
+                                        <td>29.6%</td>
+                                        <td>35.8%</td>
+                                        <td>57.5%</td>
+                                        <td>17.2%</td>
+                                        <td>17.0%</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Annenburg</th>
+                                        <td>26,151</td>
+                                        <td>8.8%</td>
+                                        <td>39.4%</td>
+                                        <td>55,900</td>
+                                        <td>74.1%</td>
+                                        <td>0.6%</td>
+                                        <td>1.6%</td>
+                                        <td>22.9%</td>
+                                        <td>75.5%</td>
+                                        <td>1.1%</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Duane</th>
+                                        <td>1,820,584</td>
+                                        <td>6.6%</td>
+                                        <td>24.2%</td>
+                                        <td>125,300</td>
+                                        <td>82.0%</td>
+                                        <td>7.9%</td>
+                                        <td>12.5%</td>
+                                        <td>52.3%</td>
+                                        <td>40.5%</td>
+                                        <td>5.2%</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Springdale</th>
+                                        <td>243,231</td>
+                                        <td>9.4%</td>
+                                        <td>22.0%</td>
+                                        <td>41,055</td>
+                                        <td>71.1%</td>
+                                        <td>17.2%</td>
+                                        <td>36.1%</td>
+                                        <td>63.7%</td>
+                                        <td>1.0%</td>
+                                        <td>45.0%</td>
+                                    </tr>
+                                </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <script src="./bundle.js" type="text/javascript"></script>
     </body>
 </html>
