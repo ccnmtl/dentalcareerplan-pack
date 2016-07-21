@@ -106,8 +106,17 @@ a.btn.btn-default {
 
 /* map view */
 #map-layers-modal .modal-dialog {
-    width: 900px;
+    width: 950px;
     font-size: .9em;
+}
+
+#map-layers-modal h5 {
+    margin-top: 0px;
+}
+
+#map-layers-modal checkbox {
+    margin-top: 7px;
+    margin-bottom: 7px;
 }
 
 .map-layers {
@@ -127,3 +136,6 @@ a.btn.btn-default {
     margin-right: auto;
 }
 
+.did-you-know .fact-text {
+    height: 200px;
+}
