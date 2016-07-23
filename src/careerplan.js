@@ -155,9 +155,17 @@ var SummaryView = BaseView.extend({
 var MapView = BaseView.extend({
     events: {
         'change .select-base-map': 'onChangeBaseMap',
+        'click .did-you-know .btn': 'render'
     },
     initialize: function(options) {
         _.bindAll(this, 'render', 'onChangeBaseMap');
+        this.facts = require('../static/json/facts.json');
+        this.idx = 0;
+        this.render();
+    },
+    render: function() {
+        jQuery(this.el).find('.fact-text').html(this.facts[this.idx].text);
+        this.idx = (this.idx + 1) % this.facts.length;
     },
     onChangeBaseMap: function(evt) {
         jQuery('.base-layer').hide();

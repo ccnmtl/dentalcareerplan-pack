@@ -42,7 +42,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <h5>Choose base layer</h5>
                                 <select class="select-base-map">
                                     <option value="">Geography</option>
@@ -89,8 +89,15 @@
                                         <input type="checkbox"/> Dental safety net
                                     </label>
                                 </div>
+
+                                <div class="well did-you-know text-center">
+                                    <h5>Did you know?</h5>
+                                    <div class="fact-text text-left"></div>
+                                    <button class="btn btn-sm btn-default">More <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+                                    <div class="clearfix"></div>
+                                </div>
                             </div>
-                            <div class="col-md-9  text-center">
+                            <div class="col-md-8 text-center">
                                 <div class="map-layers">
                                     <!-- These are the layers that never get hidden: geography, the borders of the counties and the general labels. -->
                                     <img class="map-layer" alt="career map" src="./geography.jpg" />
@@ -111,21 +118,8 @@
                                     <img class="map-layer" src="./general_labels.png" class="map-layer" />
                                 </div>
                                 <div class="clearfix"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <button class="btn btn-sm btn-default pull-right" type="button" data-toggle="collapse" data-target="#legend" aria-expanded="false" aria-controls="legend">
-                                    <span class="glyphicon glyphicon-resize-vertical" aria-hidden="true"></span> Show/Hide Legend
-                                </button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 text-center">
-                                <div class="collapse in" id="legend">
-                                    <h5>Map Legend</h5>
-                                    <img src="./legend.png" />
-                                </div>
+                                <h5>Map Legend</h5>
+                                <img src="./legend.png" />
                             </div>
                         </div>
                         <div class="row spacer">
