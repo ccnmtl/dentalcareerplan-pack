@@ -65,7 +65,6 @@ var BaseView = Backbone.View.extend({
         this.complete = true;
         this.render();
         this.trigger('complete', this);
-        console.log(this);
         jQuery('html, body').animate({ scrollTop: 0 }, 'slow');
     },
     markAnswers: function(evt) {
