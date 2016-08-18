@@ -1,13 +1,69 @@
-.btn-print {
-    margin-left: 20px !important;
+h4 {
+    padding-top: 20px;
+    margin-top: 0;
 }
 
-.spacer {
-    margin-top: 10px;
+.interactive-container {
+    min-width: 920px;
+}
+
+.activity-completed {
+    display: inline;
+    margin-left: -15px;
+}
+
+.steps {
+    margin: 10px 0 5px 0;
+}
+
+.career-planning {
+    margin-top: 20px;
 }
 
 a.btn.btn-default {
     margin-left: 10px;
+}
+
+.info-header {
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+.info-header h3 {
+    margin: 0;
+    padding: 0;
+    line-height: 44px;
+    margin-left: -15px;
+    font-size: 20px;
+}
+
+.row-nopadding {
+    margin: 0;
+    padding: 0;
+}
+
+.basic_instructions {
+    padding: 10px 10px 10px 60px;
+    background: #d9edf7 url('../img/icon_info.png') no-repeat 10px center;
+    vertical-align: middle;
+    color: #3a87ad;
+    min-height: 56px;
+}
+
+.success_instructions {
+    padding: 10px 10px 10px 60px;
+    background: #dff0d8 url('../img/icon_check.png') no-repeat 10px center;
+    vertical-align: middle;
+    color: #468847;
+    min-height: 56px;
+}
+
+.visualclear {
+    clear: both;
+}
+
+.partitioned {
+    border-right: 1px dotted #ccc;
 }
 
 /* Case quizzes */
@@ -21,6 +77,7 @@ a.btn.btn-default {
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
           border-radius: 4px;
+  margin-top: 20px;
 }
 
 .casetitle
@@ -106,7 +163,7 @@ a.btn.btn-default {
 
 /* map view */
 #map-layers-modal .modal-dialog {
-    width: 950px;
+    width: 910px;
     font-size: .9em;
 }
 
@@ -117,6 +174,11 @@ a.btn.btn-default {
 #map-layers-modal checkbox {
     margin-top: 7px;
     margin-bottom: 7px;
+}
+
+#map-layers-modal .layers-info {
+    padding-right: 0;
+    width: 280px;
 }
 
 .map-layers {

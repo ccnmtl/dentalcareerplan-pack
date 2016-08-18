@@ -1,6 +1,6 @@
 {
   "name": "dentalcareerplan-pack",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Interactive to simulate dental career planning",
   "main": "src/index.js",
   "scripts": {

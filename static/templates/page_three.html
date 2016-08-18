@@ -1,97 +1,93 @@
-<div class="page-1 spacer">
-    <div class="modal fade" id="strategy-modal" tabindex="-1" role="dialog" aria-labelledby="Strategy">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Dental Career Planning</h4>
-         </div>
-          <div class="modal-body"></div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row viewonly">
-        <div class="col-md-6">
-            <h4>3. Summary & Reflection</h4>
+<div class="page-3">
+    <div class="row info-header">
+        <div class="col-xs-12">
+            <h3>Step 3. Summary &amp; Reflection</h3>
         </div>
     </div>
 
-    <div class="row spacer viewonly">
-        <div class="col-md-6">
+    <div class="row row-nopadding hidden-print">
+        <div class="col-xs-12 row-nopadding">
             <% if (complete) { %>
-                <div class="alert alert-success">
-                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                    <b>Great work!</b> Click the printer icon to print or save your work.
+                <div class="success_instructions well left alert-success">
+                    <b>You've completed this activity.</b> Click the printer icon to print or save your work.
                 </div>
             <% } else { %>
-                <div class="alert alert-info">
-                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                <div class="basic_instructions well left alert-info">
+                    <% if (actor.reflect) { %>
                     Review your answers, then take a moment to reflect on your selections.
+                    <% } else { %>
+                    Review a summary of the advice you gave. Click the printer icon to print or save your work.
+                    <% } %>
                 </div>
             <% } %>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-7">
+    <div class="row row-nopadding">
+        <div class="col-xs-7">
             <h4><%= actor.intro_title %></h4>
-            <p><%= actor.intro_text %></p>
-            <h4>Summary</h4>
-            <p>
-                Your location consideration factors, advice and reasoning are summarized below for review.
-                Click the print icon to print or save your work.
-            </p>
+            <p class><%= actor.intro_text %></p>
         </div>
-        <div class="col-md-5">
-            <div class="actor-image actor-image-<%=actor.id%> viewonly"></div>
+        <div class="col-xs-5">
+            <div class="actor-image actor-image-<%=actor.id%> hidden-print"></div>
         </div>
     </div>
     <hr />
-    <div class="row spacer">
-        <div class="col-md-4">
+    <h4>Summary of your choices</h4>
+    <p>
+        Your location factors, considerations, and reasoning are summarized below for review.
+        <% if (actor.reflect) { %><% } else { %>Click the print icon to print or save your work.<% } %>
+    </p>
+    <br />
+    <div class="row row-nopadding">
+        <div class="col-xs-4 partitioned">
             <h4>Factors to consider</h4><br />
             <dl>
-              <dt>Most important factor</dt>
+              <dt>Most important factor:</dt>
               <dd><%=responses.factor1%></dd>
             </dl>
             <dl>
-              <dt>Next important factor</dt>
+              <dt>Next important factor:</dt>
               <dd><%=responses.factor2%></dd>
             </dl>
             <dl>
-              <dt>Third important factor</dt>
+              <dt>Third important factor:</dt>
               <dd><%=responses.factor3%></dd>
             </dl>
         </div>
-        <div class="col-md-4">
-            <h4>Advice</h4><br />
+        <div class="col-xs-4 partitioned">
+            <h4><% if (actor.reflect) { %>Considerations<% } else { %>Advise<% } %></h4><br />
             <% for (var i = 0; i < actor.questions.length; i++) { %>
                 <% var name = "advice" + i; %>
                 <dl>
-                    <dt><%= actor.questions[i].summary%></dt>
+                    <dt><%= actor.questions[i].summary%>:</dt>
                     <dd><%= responses[name] %></dd>
                 </dl>
             <% } %>
             <dl>
-                <dt>The zip code you suggested for a practice location</dt>
+                <dt>
+                    <% if (actor.reflect) { %>
+                    The area you chose to set up or join a practice:
+                    <% } else { %>
+                    The zip code where you suggested <%= actor.display_name %> should set up or join a practice:
+                    <% } %>
+                
+                </dt>
                 <dd><%= responses.officezip %></dd>
             </dl>
         </div>
-        <div class="col-md-4">
+        <div class="col-xs-4">
             <h4>Your Reasoning</h4><br />
             <dl>
-                <dt>The reasoning for your choices</dt>
+                <dt>The reasoning for your choices:</dt>
                 <dd><%= responses.reasoning %></dd>
             </dl>
         </div>
     </div>
 
     <% if (actor.reflect) { %>
-        <div class="row spacer">
-            <div class="col-md-12">
+        <div class="row row-nopadding">
+            <div class="col-xs-12">
                 <dl>
                     <form>
                     <div class="cases">
@@ -112,8 +108,8 @@
             </div>
         </div>
         <% if (!complete) { %>
-            <div class="row spacer viewonly">
-                <div class="col-md-12 text-center">
+            <div class="row row-nopadding hidden-print">
+                <div class="col-xs-12 text-center">
                     <% if (!complete) { %>
                         <button id="self-reflection" class="btn btn-primary">Submit</button>
                     <% } %>

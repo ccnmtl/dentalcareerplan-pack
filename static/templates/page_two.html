@@ -1,46 +1,40 @@
-<div class="page-1 spacer">
-    <div class="modal fade" id="strategy-modal" tabindex="-1" role="dialog" aria-labelledby="Strategy">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Dental Career Planning</h4>
-         </div>
-          <div class="modal-body"></div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6">
-            <h4>2. Offer Advice</h4>
+<div class="page-2">
+    <div class="row info-header">
+        <div class="col-xs-12">
+            <h3>Step 2. <%= actor.advise_title %></h3>
         </div>
     </div>
 
-    <div class="row spacer viewonly">
-        <div class="col-md-6">
+    <div class="row row-nopadding hidden-print">
+        <div class="col-xs-9 row-nopadding">
             <% if (complete) { %>
-                <div class="alert alert-success">
-                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                    <b>Great work!</b> Click Step 3 to continue.
+                <div class="success_instructions well left alert-success">
+                    <b>Great work!</b>
+                    <% if (actor.reflect) { %>
+                     Next, click <b>Step 3</b> to view your summary of your choices.
+                    <% } else { %>
+                     Next, click <b>Step 3</b> to view your summary of the advice you gave.
+                    <% } %>
                 </div>
             <% } else { %>
-                <div class="alert alert-info">
-                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                <div class="basic_instructions well left alert-info">
+                    You just got access to a map of North Oralington.<br />
+                    <% if (actor.reflect) { %>
+                    After considering the available information on North Oralington, what type of dental career would you select for yourself?
+                    <% } else { %>
                     Review the map and offer advice on a dental office location.
+                    <% } %>
                 </div>
             <% } %>
         </div>
-        <div class="col-md-6">
-            <a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#map-layers-modal">
-                <span class="glyphicon glyphicon-picture"></span> North Oralington Map
+        <div class="col-xs-3 row-nopadding">
+            <a href="#" class="btn btn-success pull-right" data-toggle="modal" data-target="#map-layers-modal">
+                <span class="glyphicon glyphicon-globe"></span> North Oralington Map
             </a>
         </div>
     </div>
-    <div class="row spacer">
-        <div class="col-md-12">
+    <div class="row row-nopadding">
+        <div class="col-xs-12 row-nopadding">
             <div class="actor-advice">
                 <form>
                 <!--  actor's 1st 3 questions -->
@@ -76,12 +70,16 @@
                 <% } %>
 
                 <div class="cases">
-                    <div class="casetitle">Question 4:</div>
+                    <div class="casetitle">Question 3:</div>
                     <div class="casecontent">
                         <div class="casequestion">
                             <div class="casequestion-text clearfix">
                                 <div class="question-text">
-                                    <p>Now spend some time to further explore North Oralington using the interactive map. Based on the summary and your investigation, where would you recommend Sally to set up or join a practice? Please use the map to select a zip code.</p>
+                                <p><% if (actor.reflect) { %>
+                                After considering the available information on North Oralington, where would you set up or join a practice? Please use the map to select a zip code.
+                                <% } else { %>
+                                Now spend some time to further explore North Oralington using the interactive map. Based on the summary and your investigation, where would you recommend <%= actor.display_name %> to set up or join a practice? Please use the map to select a zip code.
+                                <% } %></p>
                                 </div>
                             </div>
                             <select name="officezip" <% if (complete) { %>disabled="disabled" <% } %>>
@@ -140,15 +138,21 @@
                     </div>
                 </div>
                 <div class="cases">
-                    <div class="casetitle">Question 5:</div>
+                    <div class="casetitle">Question 4:</div>
                     <div class="casecontent">
                         <div class="casequestion">
                             <div class="casequestion-text clearfix">
                                 <div class="question-text">
-                                    <p>Please explain the reasoning for your choice.</p>
+                                    <p>
+                                    <% if (actor.reflect) { %>
+                                    How did you come to make this decision? List at least 3 important considerations explaining your reasoning.
+                                    <% } else { %>
+                                    Please explain the reasoning for your choice.
+                                    <% } %>
+                                    </p>
                                 </div>
                             </div>
-                            <textarea rows="10" name="reasoning" class="form-control" <% if (complete) { %>disabled="disabled" <% } %>><%= responses.reasoning %></textarea>
+                            <textarea rows="10" name="reasoning" class="form-control<% if (complete) { %> reasoning-text<% } %>" <% if (complete) { %>disabled="disabled" <% } %>><%= responses.reasoning %></textarea>
                         </div>
                     </div>
                 </div>
@@ -156,8 +160,8 @@
             </div>
         </div>
     </div>
-    <div class="row spacer viewonly">
-        <div class="col-md-12 text-center">
+    <div class="row row-nopadding hidden-print">
+        <div class="col-xs-12 text-center">
             <% if (!complete) { %>
                 <button id="offer-advice" class="btn btn-primary">Submit</button>
             <% } %>
