@@ -29,7 +29,10 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 jQuery(document).ready(function() {
     var actorIdx = getUrlParameter('actorIdx') || 0;
+    var quiet = getUrlParameter('quiet');
+
     module.CareerPlanApp.initialize({
-        actorIdx: actorIdx
+        actorIdx: actorIdx,
+        quiet: quiet === '1'
     });
 });

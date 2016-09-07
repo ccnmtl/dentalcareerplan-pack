@@ -51,3 +51,12 @@ NPM INSTALLATION
     <iframe src="<server>/<output_path>/?actorIdx=2"></iframe>
 </code>
 ```
+
+#### Configuration
+The interactive will alert the user on page navigation if the activity is not yet complete. To turn off this behavior, add an ```exit=0``` parameter to the url. For example:
+
+```
+<code>
+    <iframe src="<server>/<output_path>/?actorIdx=2&exit=0"></iframe>
+</code>
+```

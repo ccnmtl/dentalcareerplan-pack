@@ -48,7 +48,9 @@ module.exports = Backbone.View.extend({
         this.currentStep.bind('change', this.render);
         this.currentStep.set('idx', 0);
 
-        jQuery(window).on('beforeunload', this.beforeUnload);
+        if (!options.quiet) {
+            jQuery(window).on('beforeunload', this.beforeUnload);
+        }
     },
     beforeUnload: function() {
         var finalIdx = this.steps.length - 1;

@@ -221,7 +221,8 @@ var CareerPlanApp = {
 
         this.steps = new NumberedStepsView({
             el: jQuery('.steps'),
-            views: views
+            views: views,
+            quiet: options.quiet
         });
 
         jQuery('.interactive-container').show();
