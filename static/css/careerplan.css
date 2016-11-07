@@ -58,6 +58,12 @@ a.btn.btn-default {
     min-height: 56px;
 }
 
+.success_instructions span.nextpage {
+    color: #468847;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 .visualclear {
     clear: both;
 }

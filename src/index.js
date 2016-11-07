@@ -33,6 +33,7 @@ jQuery(document).ready(function() {
 
     module.CareerPlanApp.initialize({
         actorIdx: actorIdx,
-        quiet: quiet === '1'
+        quiet: quiet === '1',
+        next: getUrlParameter('next')
     });
 });

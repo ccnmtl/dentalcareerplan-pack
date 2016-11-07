@@ -52,11 +52,19 @@ NPM INSTALLATION
 </code>
 ```
 
-#### Configuration
+#### Optional Configuration
 The interactive will alert the user on page navigation if the activity is not yet complete. To turn off this behavior, add an ```quiet=1``` parameter to the url. For example:
 
 ```
 <code>
     <iframe src="<server>/<output_path>/?actorIdx=2&quiet=1"></iframe>
+</code>
+```
+
+The interactive can include a "Next" link that signals to the embedding environment that the user is ready to continue. To turn on this behavior, add a ```next=1``` parameter to the url. For example:
+
+```
+<code>
+    <iframe src="<server>/<output_path>/?actorIdx=2&quiet=1&next=1"></iframe>
 </code>
 ```
