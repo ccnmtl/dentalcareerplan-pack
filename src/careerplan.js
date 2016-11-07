@@ -130,11 +130,13 @@ var AdviceView = BaseView.extend({
 var SummaryView = BaseView.extend({
     events: {
         'click button#self-reflection': 'onSubmit',
+        'click .nextpage': 'onNext'
     },
     initialize: function(options) {
-        _.bindAll(this, 'render');
+        _.bindAll(this, 'render', 'onNext');
 
         this.baseInitialize(options);
+        this.next = options.next;
         this.complete = !this.actor.reflect;
         this.template = require('../static/templates/page_three.html');
     },
@@ -142,7 +144,8 @@ var SummaryView = BaseView.extend({
         var markup = this.template({
             'complete': this.complete,
             'responses': this.responses,
-            'actor': this.actor
+            'actor': this.actor,
+            'next': this.next
         });
         this.$el.html(markup);
         this.$el.show();
@@ -150,6 +153,9 @@ var SummaryView = BaseView.extend({
         if (this.complete) {
             this.trigger('complete', this);
         }
+    },
+    onNext: function() {
+        parent.jQuery(parent.document).trigger('nextpage');
     }
 });
 
@@ -215,7 +221,8 @@ var CareerPlanApp = {
         view = new SummaryView({
             el: page,
             actor:  actors[options.actorIdx],
-            responses: responses
+            responses: responses,
+            next: options.next
         });
         views.push(view);
 

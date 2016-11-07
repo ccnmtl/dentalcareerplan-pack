@@ -9,7 +9,13 @@
         <div class="col-xs-12 row-nopadding">
             <% if (complete) { %>
                 <div class="success_instructions well left alert-success">
-                    <b>You've completed this activity.</b> Click the printer icon to print or save your work.
+                    <b>You've completed this activity.</b>
+                    <div>Click the printer icon to print or save your work.</div>
+                    <% if (next !== undefined) { %>
+                        <div>
+                        Click <span class="nextpage">Next</a></span> to continue.
+                        </div>
+                    <% } %>
                 </div>
             <% } else { %>
                 <div class="basic_instructions well left alert-info">
