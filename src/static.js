@@ -1,4 +1,5 @@
-require('!file?name=[name].[ext]!../static/img/ctl-logo.png');
+require('!file?name=[name].[ext]!../static/img/logo-ctl.png');
+require('!file?name=[name].[ext]!../static/img/logo-cdm.png');
 require('!file?name=[name].[ext]!../static/img/legend.png');
 
 require('!file?name=[name].[ext]!../static/img/base/poverty.png');
