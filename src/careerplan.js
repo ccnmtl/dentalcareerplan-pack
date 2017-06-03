@@ -124,6 +124,8 @@ var AdviceView = BaseView.extend({
         });
         this.$el.html(markup);
         this.$el.show();
+
+        this.markAnswers();
     }
 });
 
