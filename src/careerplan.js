@@ -4,7 +4,6 @@ jQuery = require('jquery');
 var Backbone = require('backbone');
 var _ = require('underscore');
 var NumberedStepsView = require('./steps.js');
-var models = require('./models.js');
 window.jQuery = window.$ = jQuery;
 require('bootstrap');
 
@@ -71,8 +70,7 @@ var BaseView = Backbone.View.extend({
         for (var key in this.responses) {
             if (this.responses.hasOwnProperty(key)) {
                 var selected = this.responses[key];
-                var elt = jQuery(this.el).find(
-                    'select[name="' + key + '"]');
+                var elt = jQuery(this.el).find('select[name="' + key + '"]');
 
                 if (elt.length) {
                     jQuery(elt).find('option[value="' + selected + '"]')
@@ -189,7 +187,7 @@ var CareerPlanApp = {
     initialize: function(options) {
         var $parent = jQuery('.career-planning');
 
-        var mapView = new MapView({
+        new MapView({
             el: jQuery('#map-layers-modal')
         });
 
