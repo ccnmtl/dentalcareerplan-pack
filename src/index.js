@@ -30,6 +30,10 @@ jQuery(document).ready(function() {
     var actorIdx = getUrlParameter('actorIdx') || 0;
     var quiet = getUrlParameter('quiet');
 
+    if (!getUrlParameter('parent')) {
+        jQuery('#cu-privacy-notice').addClass('required');
+    }
+
     module.CareerPlanApp.initialize({
         actorIdx: actorIdx,
         quiet: quiet === '1',
