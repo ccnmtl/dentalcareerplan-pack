@@ -1,6 +1,7 @@
-/* global jQuery: true, module: true, alert: true */
+/* global module: true */
 
-jQuery = require('jquery');
+// eslint-disable-next-line no-redeclare
+var jQuery = require('jquery');
 var Backbone = require('backbone');
 var _ = require('underscore');
 var NumberedStepsView = require('./steps.js');
@@ -68,7 +69,7 @@ var BaseView = Backbone.View.extend({
     },
     markAnswers: function(evt) {
         for (var key in this.responses) {
-            if (this.responses.hasOwnProperty(key)) {
+            if (Object.prototype.hasOwnProperty.call(this.responses, key)) {
                 var selected = this.responses[key];
                 var elt = jQuery(this.el).find('select[name="' + key + '"]');
 
