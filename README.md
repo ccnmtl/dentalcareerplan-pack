@@ -1,8 +1,6 @@
 Young Children: Standalone Interactive Exercise [![Build Status](https://travis-ci.org/ccnmtl/dentalvisitactivity-pack.svg?branch=master)](https://travis-ci.org/ccnmtl/dentalvisitactivity-pack)
 ==========
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/ccnmtl/dentalcareerplan-pack.svg)](https://greenkeeper.io/)
-
 #### Background
 North Oralington is a fictitious state created by data from actual counties and locations throughout the U.S.
 
