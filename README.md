@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/ccnmtl/dentalcareerplan-pack/workflows/build-and-test/badge.svg)](https://github.com/ccnmtl/dentalcareerplan-pack/actions)
+
 Young Children: Standalone Interactive Exercise [![Build Status](https://travis-ci.org/ccnmtl/dentalvisitactivity-pack.svg?branch=master)](https://travis-ci.org/ccnmtl/dentalvisitactivity-pack)
 ==========
 
