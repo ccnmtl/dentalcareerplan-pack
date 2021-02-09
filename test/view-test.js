@@ -1,4 +1,5 @@
-/* global describe: true, before: true */
+/* global describe: true, before: true, it: true */
+require('!file-loader?name=[name].[ext]!../test/view-test.html');
 
 require('../src/static.js');
 
@@ -14,6 +15,14 @@ describe('CareerPlanningApp', function() {
         assert.isDefined(elt);
         jQuery(elt).html('');
 
-        module.CareerPlanningApp.initialize();
+        module.CareerPlanApp.initialize({
+            actorIdx: 0
+        });
+    });
+
+    describe('step1 interaction', function() {
+        it('initialized', function() {
+            assert.equal(jQuery('.btn-step').length, 3);
+        });
     });
 });
