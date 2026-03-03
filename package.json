@@ -50,8 +50,10 @@
     ]
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.4",
+    "@eslint/js": "^10.0.1",
     "chai": "^6.0.0",
-    "eslint": "~9.39.0",
+    "eslint": "~10.0.2",
     "eslint-plugin-no-unsafe-innerhtml": "^1.0.16",
     "globals": "^17.0.0",
     "mocha": "^11.0.0",
